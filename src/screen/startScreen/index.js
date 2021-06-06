@@ -1,22 +1,9 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { loadAsync, useFonts, Font } from 'expo-font';
 
 const StartScreen = ({ navigation }) => {
     const [showText, setShowText] = React.useState(false);
-    const [isLoadFont, setLoadFont] = React.useState(false);
-
-    const [loaded] = useFonts({
-        Itim: require('../../../assets/fonts/Itim-Regular.ttf')
-    });
-
-    if (!loaded) {
-        //console.log('not load');
-        return null;
-    }
-
-    // console.log(showText);
 
     // React.useEffect(() => {
     //     const loadAssetsAsync = async () => {
@@ -38,12 +25,12 @@ const StartScreen = ({ navigation }) => {
     //     return unsubscribe;
     // }, []);
 
-    // React.useEffect(() => {
-    //     const interval = setInterval(() => {
-    //         setShowText((showText) => !showText);
-    //     }, 1000);
-    //     return () => clearInterval(interval);
-    // }, []);
+    React.useEffect(() => {
+        const interval = setInterval(() => {
+            setShowText((showText) => !showText);
+        }, 1000);
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <View style={styles.container} onStartShouldSetResponder={() => navigation.navigate("TermServiceScreen")}>
@@ -61,12 +48,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    textStyle: {
-        flex: 1,
+    textStyle: { 
         fontSize: 30,
         fontFamily: 'Itim',
-        top: '80%',
-        //backgroundColor: '#fff',
+        top:'40%'
     },
 });
 
