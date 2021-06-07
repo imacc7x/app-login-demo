@@ -1,17 +1,11 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Alert, Modal } from 'react-native';
-import { Input } from 'react-native-elements';
-import { Checkbox, Appbar } from 'react-native-paper';
+import { StyleSheet, Text, View, TouchableOpacity, Modal } from 'react-native';
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 
 const PinScreen = ({ navigation, route }) => {
-  const [cornfirmPin, setConfirmPin] = React.useState(false);
   const [modalVisible, setModalVisible] = React.useState(false);
-  const [pin, setPin] = React.useState(0);
   const { setTouchId } = route.params;
-
-  // setModalVisible(setTouchId);
 
   const closeModal = () => {
     setModalVisible(true);
@@ -20,43 +14,25 @@ const PinScreen = ({ navigation, route }) => {
   React.useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
       setModalVisible(setTouchId);
-
     });
     return unsubscribe;
   }, [navigation]);
 
   return (
-    <View style={[styles.container, modalVisible ? '' : { backgroundColor: '#008db8' }]}>
-      {/* <View style={{flex: 1,backgroundColor: '#ccf3ff',alignItems: 'center',justifyContent: 'center',}}></View> */}
+    <View style={[styles.container, modalVisible ? '' : { backgroundColor: '#009ccc' }]}>
       <View style={{ flex: 1, width: '90%', top: '20%', alignItems: 'center' }}>
 
-        {/* {setTouchId ? test() : test()} */}
-
         <View>
-          <Text style={styles.textStyle}>
-            กรุณากรอกรหัส PIN
-                    </Text>
+          <Text style={styles.textStyle}>กรุณากรอกรหัส PIN</Text>
         </View>
 
         <View style={{ flexDirection: 'row' }}>
-          {cornfirmPin === false ?
-            <View style={styles.circle} /> : <View style={styles.circle2} />
-          }
-          {cornfirmPin === false ?
-            <View style={styles.circle} /> : <View style={styles.circle2} />
-          }
-          {cornfirmPin === false ?
-            <View style={styles.circle} /> : <View style={styles.circle2} />
-          }
-          {cornfirmPin === false ?
-            <View style={styles.circle} /> : <View style={styles.circle2} />
-          }
-          {cornfirmPin === false ?
-            <View style={styles.circle} /> : <View style={styles.circle2} />
-          }
-          {cornfirmPin === false ?
-            <View style={styles.circle} /> : <View style={styles.circle2} />
-          }
+          <View style={styles.circleBeforePin} />
+          <View style={styles.circleBeforePin} />
+          <View style={styles.circleBeforePin} />
+          <View style={styles.circleBeforePin} />
+          <View style={styles.circleBeforePin} />
+          <View style={styles.circleBeforePin} />
         </View>
 
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '90%', marginTop: '20%' }}>
@@ -123,9 +99,11 @@ const PinScreen = ({ navigation, route }) => {
 
         <View style={{ flexDirection: 'row', width: '90%', marginTop: '10%', justifyContent: 'space-between' }}>
 
-          <View style={{ width: 66, height: 65 }} >
-            <MaterialCommunityIcons name="fingerprint" size={60} color="black" />
-          </View>
+        <TouchableOpacity>
+            <View style={styles.iconSize} >
+              <MaterialCommunityIcons name="fingerprint" size={60} color="black" />
+            </View>
+          </TouchableOpacity>
 
           <TouchableOpacity>
             <View style={styles.circleButton} >
@@ -134,7 +112,7 @@ const PinScreen = ({ navigation, route }) => {
           </TouchableOpacity>
 
           <TouchableOpacity>
-            <View style={{ width: 66, height: 65, justifyContent: 'center', alignItems: 'center' }}>
+            <View style={styles.iconSize}>
               <Feather name="delete" size={60} color="black" />
             </View>
           </TouchableOpacity>
@@ -146,33 +124,25 @@ const PinScreen = ({ navigation, route }) => {
         <Modal transparent={true} visible={!modalVisible}>
           <View style={{ flex: 1, top: '30%' }}>
             <View style={styles.modalView} >
+
               <MaterialCommunityIcons name="fingerprint" size={55} color="black" />
-              <Text style={styles.textStyleModal}>
-                Touch ID for
-                            </Text>
-              <Text style={styles.textStyleModal}>
-                "CGS AppLication"
-                            </Text>
-              <Text style={{ fontFamily: 'Itim', marginTop: '5%' }}>
-                เข้าใช้งานด้วย Touch ID หรือ
-                            </Text>
-              <Text style={{ fontFamily: 'Itim' }}>
-                ยกเลิกเพื่อกลับไปใช้รหัส PIN
-                            </Text>
+              <Text style={styles.textStyleModal}>Touch ID for</Text>
+              <Text style={styles.textStyleModal}>"CGS AppLication"</Text>
+              <Text style={{ fontFamily: 'Itim', marginTop: '5%' }}>เข้าใช้งานด้วย Touch ID หรือ</Text>
+              <Text style={{ fontFamily: 'Itim' }}>ยกเลิกเพื่อกลับไปใช้รหัส PIN</Text>
 
               <View style={{ width: '100%', flex: 1 }}>
-                <View style={{ flex: 1, width: '100%' }}>
-
-                </View>
+                <View style={{ flex: 1, width: '100%' }}/>
 
                 <TouchableOpacity style={styles.buttonModal}>
                   <Text style={styles.textStyleModal}>Enter Password</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.buttonModal}  onPress={closeModal}>
+                <TouchableOpacity style={styles.buttonModal} onPress={closeModal}>
                   <Text style={styles.textStyleModal}>ยอมรับ</Text>
                 </TouchableOpacity>
               </View>
+
             </View>
           </View>
         </Modal>
@@ -189,11 +159,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  inputStyle: {
-    fontSize: 20,
-    fontFamily: 'Itim',
-    marginTop: '10%'
-  },
   textStyle: {
     fontSize: 20,
     fontFamily: 'Itim',
@@ -203,26 +168,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: 'Itim',
   },
-  button: {
-    borderRadius: 8,
-    backgroundColor: '#c7c7c7',
-    alignItems: 'center',
-    marginTop: '10%'
-  },
-  circle: {
+  circleBeforePin: {
     width: 35,
     height: 35,
     borderRadius: 100 / 2,
     backgroundColor: 'white',
-    borderColor: 'black',
-    borderWidth: 3,
-    marginLeft: '1%'
-  },
-  circle2: {
-    width: 35,
-    height: 35,
-    borderRadius: 100 / 2,
-    backgroundColor: 'black',
     borderColor: 'black',
     borderWidth: 3,
     marginLeft: '1%'
@@ -262,11 +212,17 @@ const styles = StyleSheet.create({
   buttonModal: {
     flex: 1,
     borderRadius: 8,
-    backgroundColor: '#c7c7c7',
+    backgroundColor: '#48d3ff',
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: '1%'
   },
+  iconSize: {
+    width: 65, 
+    height: 65, 
+    justifyContent: 'center', 
+    alignItems: 'center' 
+  }
 });
 
 export default PinScreen;

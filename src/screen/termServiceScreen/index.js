@@ -2,22 +2,22 @@ import 'react-native-gesture-handler';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Modal } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
-import { Checkbox , Appbar } from 'react-native-paper';
+import { Appbar } from 'react-native-paper';
 
-const TermServiceScreen = ({ navigation, previous }) => {
+const TermServiceScreen = ({ navigation }) => {
     const [modalVisible, setModalVisible] = useState(false);
 
-    const changeScreen = () => {
+    const handleChangeScreen = () => {
         setModalVisible(false);
         navigation.navigate("LoginScreen")
     }
 
-    const handleBack = () => {
-        console.log('check');
-    }
+    // const handleBack = () => {
+    //     console.log('check');
+    // }
 
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, modalVisible ? { backgroundColor: '#009ccc' } : '']}>
             {/* <View style={ {top:'5%', right:'40%'}}>
                 <Appbar.BackAction onPress={handleBack} size = {30}/>    
            </View> */}
@@ -25,7 +25,7 @@ const TermServiceScreen = ({ navigation, previous }) => {
             <View style={{ flex: 1, width: '90%', top: '30%' }}>
                 <Text style={styles.textStyleHead}>
                     ยินดีต้อนรับ</Text>
-                <Text style={styles.textStyle}>
+                <Text style={[styles.textStyle , {color: '#474747' }]}>
                     กรุณาเลือกภาษา</Text>
 
                 <TouchableOpacity style={styles.button}>
@@ -50,16 +50,14 @@ const TermServiceScreen = ({ navigation, previous }) => {
                             <View style={{ flex: 1, height: 1, backgroundColor: '#c7c7c7', marginVertical: 15 }} />
                         </View>
 
-                        <View style={{ flex: 1, width: '100%' }}>
-                            <Text>gg</Text>
-                        </View>
+                        <View style={{ flex: 1, width: '100%' }} />
 
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                             <TouchableOpacity style={styles.buttonModal}>
                                 <Text style={styles.textStyle}>ปฏิเสธ</Text>
                             </TouchableOpacity>
 
-                            <TouchableOpacity style={styles.buttonModal} onPress={changeScreen}>
+                            <TouchableOpacity style={styles.buttonModal} onPress={handleChangeScreen}>
                                 <Text style={styles.textStyle}>ยอมรับ</Text>
                             </TouchableOpacity>
                         </View>
@@ -78,40 +76,27 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    textStyle: {
-        fontSize: 20,
-        fontFamily: 'Itim',
-    },
     textStyleHead: {
         fontSize: 30,
         fontFamily: 'Itim',
         marginBottom: '1%'
     },
-    textStyleHeadModal: {
-        fontSize: 25,
+    textStyle: {
+        fontSize: 20,
         fontFamily: 'Itim',
     },
     button: {
         borderRadius: 8,
         paddingVertical: 14,
         paddingHorizontal: 10,
-        backgroundColor: '#c7c7c7',
+        backgroundColor: '#48d3ff',
         alignItems: 'center',
         marginVertical: '5%'
-    },
-    buttonModal: {
-        flex: 1,
-        borderRadius: 8,
-        paddingVertical: 14,
-        paddingHorizontal: 10,
-        backgroundColor: '#c7c7c7',
-        alignItems: 'center',
-        marginRight: '1%'
     },
     modalView: {
         height: '80%',
         top: '20%',
-        backgroundColor: "white",
+        backgroundColor: "#ccf3ff",
         borderRadius: 20,
         padding: 35,
         alignItems: "center",
@@ -123,6 +108,19 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 4,
         elevation: 5,
+    },
+    textStyleHeadModal: {
+        fontSize: 25,
+        fontFamily: 'Itim',
+    },
+    buttonModal: {
+        flex: 1,
+        borderRadius: 8,
+        paddingVertical: 14,
+        paddingHorizontal: 10,
+        backgroundColor: '#48d3ff',
+        alignItems: 'center',
+        marginRight: '1%'
     },
 });
 

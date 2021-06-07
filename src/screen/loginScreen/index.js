@@ -9,7 +9,7 @@ const LoginScreen = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <View style={{ flex: 1, width: '90%', top: '25%'}}>
+            <View style={{ flex: 1, width: '90%', top: '25%' }}>
 
                 <Input placeholder='ชื่อผู้ใช้งาน' style={styles.inputStyle} />
                 <Input placeholder='รหัสผ่าน' style={styles.inputStyle} />
@@ -24,16 +24,16 @@ const LoginScreen = ({ navigation }) => {
                     </TouchableOpacity>
                 </View>
 
-                <TouchableOpacity style={styles.button} onPress={() =>  navigation.navigate("RequestOtpScreen")}>
+                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("RequestOtpScreen")}>
                     <Text style={styles.textStyle}>เข้าสู่ระบบ</Text>
                 </TouchableOpacity>
 
                 <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: '10%' }}>
-                    <View style={{ flex: 1, height: 1, backgroundColor: '#000' }} />
+                    <View style={{ flex: 1, height: 1, backgroundColor: '#7a7a7a' }} />
                     <View>
-                        <Text style={{ fontFamily: 'Itim', fontSize: 20, color: '#000' }}>ไม่มีบัญชีผู้ใช้</Text>
+                        <Text style={{ fontFamily: 'Itim', fontSize: 20, color: '#7a7a7a' }}>ไม่มีบัญชีผู้ใช้</Text>
                     </View>
-                    <View style={{ flex: 1, height: 1, backgroundColor: '#000' }} />
+                    <View style={{ flex: 1, height: 1, backgroundColor: '#7a7a7a' }} />
                 </View>
 
                 <TouchableOpacity style={styles.button}>
@@ -66,9 +66,9 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         paddingVertical: 10,
         paddingHorizontal: 10,
-        backgroundColor: '#c7c7c7',
+        backgroundColor: '#48d3ff',
         alignItems: 'center',
-        marginTop: '10%' 
+        marginTop: '10%'
     },
 });
 
