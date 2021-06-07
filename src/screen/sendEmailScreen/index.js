@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     textStyle: {
-        fontSize: 20,
+        fontSize: 18,
         fontFamily: 'Itim',
       
     },
