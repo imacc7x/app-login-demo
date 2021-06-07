@@ -3,6 +3,8 @@ import React from 'react';
 import StartScreen from './src/screen/startScreen/index';
 import TermServiceScreen from './src/screen/termServiceScreen/index';
 import LoginScreen from './src/screen/loginScreen/index';
+import ForgetPassScreen from './src/screen/forgetPassScreen/index';
+import SendEmailScreen from './src/screen/sendEmailScreen/index';
 import RequestOtpScreen from './src/screen/requestOtpScreen/index';
 import VerifyOtpScreen from './src/screen/verifyOtpScreen/index';
 import SetPinScreen from './src/screen/setPinScreen/index';
@@ -30,6 +32,8 @@ const App = () => {
         {/* <Stack.Screen name="StartScreen" component={StartScreen} /> */}
         <Stack.Screen name="TermServiceScreen" component={TermServiceScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
+        <Stack.Screen name="ForgetPassScreen" component={ForgetPassScreen} />
+        <Stack.Screen name="SendEmailScreen" component={SendEmailScreen} />
         <Stack.Screen name="RequestOtpScreen" component={RequestOtpScreen} />
         <Stack.Screen name="VerifyOtpScreen" component={VerifyOtpScreen} />
         <Stack.Screen name="SetPinScreen" component={SetPinScreen} />

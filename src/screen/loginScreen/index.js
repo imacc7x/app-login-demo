@@ -19,7 +19,7 @@ const LoginScreen = ({ navigation }) => {
                         <Checkbox.Android status={checked ? 'checked' : 'unchecked'} onPress={() => { setChecked(!checked); }} />
                         <Text style={styles.textStyle}>บันทึกการเข้าสู่ระบบ</Text>
                     </View>
-                    <TouchableOpacity onPress={() => console.log('ลืมรหัสผ่าน?')}>
+                    <TouchableOpacity  onPress={() => navigation.navigate("ForgetPassScreen")}>
                         <Text style={styles.textStyle}>ลืมรหัสผ่าน?</Text>
                     </TouchableOpacity>
                 </View>
