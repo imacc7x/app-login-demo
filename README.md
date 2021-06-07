@@ -7,6 +7,8 @@ npm install
 npm start
 
 Press a for open android.
+
 Press i for open ios simulator.
+
 Press r for reload app.
 
