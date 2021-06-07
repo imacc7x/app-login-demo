@@ -20,9 +20,8 @@ const SendEmailScreen = ({ navigation }) => {
                         <Text style={styles.textStyle}>ตกลง</Text>
                     </TouchableOpacity>
                 </View>
-             </View>
-          
-            
+                
+             </View>     
         </View>
     );
 };
