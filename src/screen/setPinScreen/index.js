@@ -37,21 +37,12 @@ const SetPinScreen = ({ navigation }) => {
                     {cornfirmPin === true ?
                         <View style={styles.circleAfterPin} /> : <View style={styles.circleBeforePin} />
                     }
-                    {cornfirmPin === true ?
-                        <View style={styles.circleAfterPin} /> : <View style={styles.circleBeforePin} />
-                    }
-                    {cornfirmPin === true ?
-                        <View style={styles.circleAfterPin} /> : <View style={styles.circleBeforePin} />
-                    }
-                    {cornfirmPin === true ?
-                        <View style={styles.circleAfterPin} /> : <View style={styles.circleBeforePin} />
-                    }
-                    {cornfirmPin === true ?
-                        <View style={styles.circleAfterPin} /> : <View style={styles.circleBeforePin} />
-                    }
-                    {cornfirmPin === true ?
-                        <View style={styles.circleAfterPin} /> : <View style={styles.circleBeforePin} />
-                    }
+                    <View style={styles.circleBeforePin} />
+                    <View style={styles.circleBeforePin} />
+                    <View style={styles.circleBeforePin} />
+                    <View style={styles.circleBeforePin} />
+                    <View style={styles.circleBeforePin} />
+                   
                 </View>
 
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '90%', marginTop: '20%' }}>

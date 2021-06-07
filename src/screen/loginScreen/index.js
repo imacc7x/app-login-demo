@@ -6,13 +6,15 @@ import { Checkbox } from 'react-native-paper';
 
 const LoginScreen = ({ navigation }) => {
     const [checked, setChecked] = React.useState(false);
+    const [id , setId] = React.useState('');
+    const [password , setPassword] = React.useState('');
 
     return (
         <View style={styles.container}>
             <View style={{ flex: 1, width: '90%', top: '25%' }}>
 
-                <Input placeholder='ชื่อผู้ใช้งาน' style={styles.inputStyle} />
-                <Input placeholder='รหัสผ่าน' style={styles.inputStyle} />
+                <Input placeholder='ชื่อผู้ใช้งาน' style={styles.inputStyle} onChangeText={value => setId(value)} />
+                <Input placeholder='รหัสผ่าน' style={styles.inputStyle} secureTextEntry={true} onChangeText={value => setPassword(value)} />
 
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '90%' }}>
                     <View style={{ flexDirection: 'row' }}>

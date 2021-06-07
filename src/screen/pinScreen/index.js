@@ -139,7 +139,7 @@ const PinScreen = ({ navigation, route }) => {
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.buttonModal} onPress={closeModal}>
-                  <Text style={styles.textStyleModal}>ยอมรับ</Text>
+                  <Text style={styles.textStyleModal}>ยกเลิก</Text>
                 </TouchableOpacity>
               </View>
 

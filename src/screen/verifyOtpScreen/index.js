@@ -33,7 +33,9 @@ const VerifyOtpScreen = ({ navigation }) => {
                 <Text style={styles.textStyle}>
                     082-XXX-8998</Text>
 
-                <OTPTextView inputCount={6} keyboardType="numeric" tintColor='#48d3ff' handleTextChange={handleVerifyOtp} />
+                <View style={{ alignItems:'center' }}>
+                    <OTPTextView inputCount={6} keyboardType="numeric" tintColor='#48d3ff' handleTextChange={handleVerifyOtp} />
+                </View>
 
                 <View style={{ marginTop: '40%', alignItems: 'center' }}>
                     <Text style={styles.textStyle}>
