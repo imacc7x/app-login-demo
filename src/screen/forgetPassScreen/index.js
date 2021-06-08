@@ -13,11 +13,12 @@ const ForgetPassScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
 
-            <View style={{ top: '5%', right: '40%' }}>
+
+            <View style={{ top: '5%', width: '100%' }}>
                 <Appbar.BackAction onPress={handleBack} size={30} />
             </View>
 
-            <View style={{ flex: 1, width: '90%', top: '10%'}}>
+            <View style={{ flex: 1, width: '90%', top: '10%' }}>
 
                 <Text style={styles.textStyleHead}>
                     ลืมรหัสผ่าน?
@@ -29,14 +30,14 @@ const ForgetPassScreen = ({ navigation }) => {
                     ลงทะเบียน
                 </Text>
 
-                <View style={{marginTop:'30%'}}>
+                <View style={{ marginTop: '30%' }}>
                     <Input placeholder='อีเมล / เบอร์โทรศัพท์' style={styles.textStyle} />
                 </View>
 
                 <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("SendEmailScreen")}>
                     <Text style={styles.textStyle}>ส่ง</Text>
                 </TouchableOpacity>
-            
+
             </View>
 
         </View>
@@ -53,7 +54,7 @@ const styles = StyleSheet.create({
     textStyle: {
         fontSize: 20,
         fontFamily: 'Itim',
-      
+
     },
     textStyleHead: {
         fontSize: 30,
@@ -67,7 +68,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#48d3ff',
         alignItems: 'center',
         marginTop: '10%',
-        justifyContent:'center'
+        justifyContent: 'center'
     },
 });
 

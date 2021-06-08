@@ -12,20 +12,17 @@ const TermServiceScreen = ({ navigation }) => {
         navigation.navigate("LoginScreen")
     }
 
-    // const handleBack = () => {
-    //     console.log('check');
-    // }
+    const handleBack = () => {
+        setModalVisible(false)
+    }
 
     return (
         <View style={[styles.container, modalVisible ? { backgroundColor: '#009ccc' } : '']}>
-            {/* <View style={ {top:'5%', right:'40%'}}>
-                <Appbar.BackAction onPress={handleBack} size = {30}/>    
-           </View> */}
 
             <View style={{ flex: 1, width: '90%', top: '30%' }}>
                 <Text style={styles.textStyleHead}>
                     ยินดีต้อนรับ</Text>
-                <Text style={[styles.textStyle , {color: '#474747' }]}>
+                <Text style={[styles.textStyle, { color: '#474747' }]}>
                     กรุณาเลือกภาษา</Text>
 
                 <TouchableOpacity style={styles.button}>
@@ -38,6 +35,11 @@ const TermServiceScreen = ({ navigation }) => {
             </View>
 
             <Modal animationType="slide" transparent={true} visible={modalVisible}>
+
+                <View style={{ top: '5%' }}>
+                    <Appbar.BackAction onPress={handleBack} size={30} />
+                </View>
+
                 <View style={styles.modalView}>
                     <View style={{ flex: 1, width: '100%' }}>
 
@@ -95,7 +97,7 @@ const styles = StyleSheet.create({
     },
     modalView: {
         height: '80%',
-        top: '20%',
+        top: '10%',
         backgroundColor: "#ccf3ff",
         borderRadius: 20,
         padding: 35,

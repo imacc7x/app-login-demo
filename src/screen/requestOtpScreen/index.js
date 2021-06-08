@@ -13,7 +13,7 @@ const RequestOtpScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
 
-            <View style={{ top: '5%', right: '40%' }}>
+            <View style={{ top: '5%' , width: '100%'}}>
                 <Appbar.BackAction onPress={handleBack} size={30} />
             </View>
 

@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88ce2e62-d301-4748-a48a-60d76f4b8f39" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screen/requestOtpScreen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/requestOtpScreen/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screen/termServiceScreen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screen/termServiceScreen/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
