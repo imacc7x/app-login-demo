@@ -16,7 +16,7 @@ const LoginScreen = ({ navigation }) => {
                 <Input placeholder='ชื่อผู้ใช้งาน' style={styles.inputStyle} onChangeText={value => setId(value)} />
                 <Input placeholder='รหัสผ่าน' style={styles.inputStyle} secureTextEntry={true} onChangeText={value => setPassword(value)} />
 
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '90%' }}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between'}}>
                     <View style={{ flexDirection: 'row' }}>
                         <Checkbox.Android status={checked ? 'checked' : 'unchecked'} onPress={() => { setChecked(!checked); }} />
                         <Text style={styles.textStyle}>บันทึกการเข้าสู่ระบบ</Text>

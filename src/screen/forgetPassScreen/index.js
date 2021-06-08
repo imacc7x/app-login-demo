@@ -13,7 +13,6 @@ const ForgetPassScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
 
-
             <View style={{ top: '5%', width: '100%' }}>
                 <Appbar.BackAction onPress={handleBack} size={30} />
             </View>
